@@ -81,6 +81,12 @@ dex:
     theme: ondemand
 EOF
 
+RUBY_ENVIRONMENT=/opt/ood/ood-portal-generator/etc/profile
+
+log_info "Installing OOD Dependencies"
+source "$RUBY_ENVIRONMENT"
+gem install dotenv bcrypt
+
 log_info "Generating new httpd24 and dex configs.."
 /opt/ood/ood-portal-generator/sbin/update_ood_portal
 
